@@ -6,7 +6,8 @@ const HomePage = () => {
       <h1>HomePage</h1>
 
       <p>
-        <Link to={routes.home()}>Home</Link>`
+        <Link to={routes.home()}>Home</Link>
+        <br></br>
         <Link to={routes.about()}>About</Link>
       </p>
     </>
