@@ -1,16 +1,12 @@
-import { Link, routes } from '@redwoodjs/router'
+// import { Link, routes } from '@redwoodjs/router'
+import BlogLayout from 'src/layouts/BlogLayout/BlogLayout'
 
 const AboutPage = () => {
   return (
     <>
-      <h1>
-        {' '}
-        <Link to={routes.home()}>Redwood Blog</Link>
-      </h1>
-
-      <p>
-        <Link to={routes.about()}>About</Link>`
-      </p>
+      <BlogLayout>
+        <p>this is the ABOUT PAGE</p>
+      </BlogLayout>
     </>
   )
 }
