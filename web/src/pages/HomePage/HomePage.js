@@ -4,9 +4,7 @@ import BlogLayout from 'src/layouts/BlogLayout/BlogLayout'
 const HomePage = () => {
   return (
     <>
-      <BlogLayout>
-        <p>this is the homePage </p>
-      </BlogLayout>
+      <BlogLayout>This is the HomePage</BlogLayout>
     </>
   )
 }
