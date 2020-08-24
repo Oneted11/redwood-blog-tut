@@ -1,10 +1,13 @@
 // import { Link, routes } from '@redwoodjs/router'
 import BlogLayout from 'src/layouts/BlogLayout/BlogLayout'
+import BlogPostsCell from 'src/components/BlogPostsCell'
 
 const HomePage = () => {
   return (
     <>
-      <BlogLayout>This is the HomePage</BlogLayout>
+      <BlogLayout>
+        <BlogPostsCell />
+      </BlogLayout>
     </>
   )
 }
