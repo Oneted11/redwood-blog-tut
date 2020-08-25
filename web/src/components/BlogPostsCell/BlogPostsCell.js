@@ -21,7 +21,7 @@ export const Success = ({ posts }) => {
     <article key={post.id}>
       <header>
         <h2>
-          <Link to={routes.blogPost()}>{post.title}</Link>
+          <Link to={routes.blogPost({ id: post.id })}>{post.title}</Link>
         </h2>
       </header>
       <p>{post.body}</p>
