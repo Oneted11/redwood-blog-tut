@@ -25,7 +25,8 @@ export const Success = ({ posts }) => {
         </h2>
       </header>
       <p>{post.body}</p>
-      <time>Posted at :{post.createdAt}</time>
+      <div>Posted at :</div>
+      <time>{post.createdAt}</time>
     </article>
   ))
 }
