@@ -8,11 +8,24 @@ import {
   Label,
   FieldError,
 } from '@redwoodjs/forms'
+import { useMutation } from '@redwoodjs/web'
+
+const CREATE_CONTACT = gql`
+  mutation CreateContactMutation($input: CreateContactInput!) {
+    createContact(input: $input) {
+      id
+    }
+  }
+`
 
 const ContactPage = () => {
+  const [create, { loading, error }] = useMutation(CREATE_CONTACT)
+
   const onSubmit = (data) => {
+    create({ variables: { input: data } })
     console.log(data)
   }
+
   return (
     <BlogLayout>
       <Form onSubmit={onSubmit} validation={{ mode: 'onBlur' }}>
@@ -22,7 +35,7 @@ const ContactPage = () => {
         </Label>
         <TextField
           name="name"
-          placeHolder="Add name"
+          placeholder="Add name"
           validation={{ required: true }}
           errorClassName="error"
         />
@@ -33,7 +46,7 @@ const ContactPage = () => {
         </Label>
         <TextField
           name="email"
-          placeHolder="add email"
+          placeholder="add email"
           validation={{
             required: true,
             pattern: {
@@ -51,13 +64,13 @@ const ContactPage = () => {
 
         <TextAreaField
           name="message"
-          placeHolder="add text"
+          placeholder="add text"
           validation={{ required: true }}
           errorClassName="error"
         />
         <FieldError name="message" className="error" />
 
-        <Submit>Save</Submit>
+        <Submit disabled={loading}>Save</Submit>
       </Form>
     </BlogLayout>
   )
